@@ -1,15 +1,15 @@
 ﻿using Mirai.Net.Data.Messages.Receivers;
 using Mirai.Net.Sessions.Http.Managers;
 using Mirai.Net.Utils.Scaffolds;
-using QQAPI.Message;
+using QQAPI.MiraiNET.Message;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static QQAPI.Reply.IReply;
+using static QQAPI.MiraiNET.Reply.IReply;
 
-namespace QQAPI.Reply
+namespace QQAPI.MiraiNET.Reply
 {
     public class Group : IReply
     {

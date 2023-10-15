@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Mirai.Net.Data.Messages.Concretes;
 
-namespace QQAPI.Message
+namespace QQAPI.MiraiNET.Message
 {
     public class Quote : IMessage
     {

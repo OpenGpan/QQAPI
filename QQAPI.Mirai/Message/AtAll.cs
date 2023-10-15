@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace QQAPI.Message
+namespace QQAPI.MiraiNET.Message
 {
     public class AtAll : IMessage
     {

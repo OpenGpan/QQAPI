@@ -9,11 +9,11 @@ using Mirai.Net.Data.Messages.Receivers;
 using Mirai.Net.Sessions;
 using Mirai.Net.Sessions.Http.Managers;
 using Mirai.Net.Utils.Scaffolds;
-using QQAPI.Message;
-using QQAPI.Reply;
-using static QQAPI.Handle;
+using QQAPI.MiraiNET.Message;
+using QQAPI.MiraiNET.Reply;
+using static QQAPI.MiraiNET.Handle;
 
-namespace QQAPI
+namespace QQAPI.MiraiNET
 {
     public class QQBot
     {

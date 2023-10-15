@@ -2,14 +2,14 @@
 using Mirai.Net.Data.Messages.Concretes;
 using Mirai.Net.Data.Messages.Receivers;
 using Mirai.Net.Utils.Scaffolds;
-using QQAPI.Reply;
+using QQAPI.MiraiNET.Reply;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace QQAPI.Message
+namespace QQAPI.MiraiNET.Message
 {
     public class Messages : List<IMessage>
     {

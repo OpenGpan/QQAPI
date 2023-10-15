@@ -1,11 +1,11 @@
-﻿using QQAPI.Message;
+﻿using QQAPI.MiraiNET.Message;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace QQAPI.Reply
+namespace QQAPI.MiraiNET.Reply
 {
     public interface IReply
     {

@@ -1,10 +1,10 @@
 ﻿using Mirai.Net.Data.Messages.Receivers;
 using Mirai.Net.Sessions.Http.Managers;
 using Mirai.Net.Utils.Scaffolds;
-using QQAPI.Message;
-using static QQAPI.Reply.IReply;
+using QQAPI.MiraiNET.Message;
+using static QQAPI.MiraiNET.Reply.IReply;
 
-namespace QQAPI.Reply
+namespace QQAPI.MiraiNET.Reply
 {
     public class Temp : IReply
     {
