@@ -5,6 +5,10 @@ VisualStudioVersion = 17.3.32804.467
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QQAPI.MiraiNET", "QQAPI.Mirai\QQAPI.MiraiNET.csproj", "{EE8A6BA5-7028-466F-8E21-8F7293A3C471}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QQAPI", "QQAPI\QQAPI.csproj", "{FC338298-BC82-48C1-8826-4283FED7122A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QQAPI.LLOneBot", "QQAPI.LLOneBot\QQAPI.LLOneBot.csproj", "{86F1B29F-1866-4871-9473-326F198C928F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{EE8A6BA5-7028-466F-8E21-8F7293A3C471}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EE8A6BA5-7028-466F-8E21-8F7293A3C471}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EE8A6BA5-7028-466F-8E21-8F7293A3C471}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC338298-BC82-48C1-8826-4283FED7122A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC338298-BC82-48C1-8826-4283FED7122A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC338298-BC82-48C1-8826-4283FED7122A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC338298-BC82-48C1-8826-4283FED7122A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86F1B29F-1866-4871-9473-326F198C928F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86F1B29F-1866-4871-9473-326F198C928F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86F1B29F-1866-4871-9473-326F198C928F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86F1B29F-1866-4871-9473-326F198C928F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
