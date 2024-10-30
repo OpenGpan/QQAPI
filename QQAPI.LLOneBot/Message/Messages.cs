@@ -2,6 +2,7 @@
 
 
 
+using LinePutScript.Converter;
 using QQAPI.LLOneBot.Reply;
 using System;
 using System.Collections.Generic;
@@ -53,13 +54,18 @@ namespace QQAPI.LLOneBot.Message
                 switch (msg.Type)
                 {
                     case UnifyBot.Model.Messages.Text:
-                        Add(new Plain((TextMessage)msg));
+                        if (msg is TextMessage m) 
+                            Add(new Plain(m));
                         break;
                     case UnifyBot.Model.Messages.Image:
                         Add(new Image((ImageMessage)msg));
                         break;
                     case UnifyBot.Model.Messages.At:
-                        Add(new At((AtMessage)msg));
+                        var at = (AtMessage)msg;
+                        if (long.TryParse(at.Data.QQ, out var qq))
+                            Add(new At(qq));
+                        else
+                            Add(new AtAll());
                         break;
                     case UnifyBot.Model.Messages.Face:
                         Add(new Face((FaceMessage)msg));
