@@ -41,6 +41,7 @@ namespace QQAPI.LLOneBot.Reply
             ID = Convert.ToInt64(groupr.GroupQQ);
             replyid = groupr.MessageId;
             group = groupr.Group;
+            SenderID = Convert.ToInt64(groupr.SenderQQ);
             Name = group.GroupName;
             Name = group.GroupName;
             var r = group.Members.Find(x => x.QQ == groupr.BotQQ)?.Role;
@@ -56,7 +57,7 @@ namespace QQAPI.LLOneBot.Reply
         }
 
 
-        public ReplyType Type => ReplyType.Group;
+        public MessagesType Type => MessagesType.Group;
 
         public async Task MessageSend(Messages messages)
         {

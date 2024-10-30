@@ -32,34 +32,37 @@ namespace QQAPI.LLOneBot
         {
             bot.MessageReceived.OfType<MessageReceiver>().Subscribe(x =>
             {
-                //只能接收到消息（所有类型）
-                switch (x.MessageType)
-                {
-                    case UnifyBot.Model.MessageType.Private:
-                        FriendMessage?.Invoke(new Messages((PrivateReceiver)x));
-                        break;
-                    case UnifyBot.Model.MessageType.Group:
-                        GroupMessage?.Invoke(new Messages((GroupReceiver)x));
-                        break;
-                    case UnifyBot.Model.MessageType.Unknown:
-                        TempMessage?.Invoke(new Messages(x, this));
-                        break;
-                }
+                if (x.BotQQ == BotQQ)
+                    //只能接收到消息（所有类型）
+                    switch (x.MessageType)
+                    {
+                        case UnifyBot.Model.MessageType.Private:
+                            FriendMessage?.Invoke(new Messages((PrivateReceiver)x));
+                            break;
+                        case UnifyBot.Model.MessageType.Group:
+                            GroupMessage?.Invoke(new Messages((GroupReceiver)x));
+                            break;
+                        case UnifyBot.Model.MessageType.Unknown:
+                            TempMessage?.Invoke(new Messages(x, this));
+                            break;
+                    }
             });
 
             bot.EventReceived
             .OfType<RequestGroup>()
             .Subscribe(async x =>
             {
-                if (InvitedJoinGroup?.Invoke(x.GroupQQ, Convert.ToInt64(x.QQ), x.Common) == true)
-                    await x.Agree();
+                if (x.BotQQ == BotQQ)
+                    if (InvitedJoinGroup?.Invoke(x.GroupQQ, Convert.ToInt64(x.QQ), x.Common) == true)
+                        await x.Agree();
             });
             bot.EventReceived
             .OfType<RequestFriend>()
             .Subscribe(async x =>
             {
-                if (NewFriendApply?.Invoke(Convert.ToInt64(x.QQ), x.Common) == true)
-                    await x.Agree();
+                if (x.BotQQ == BotQQ)
+                    if (NewFriendApply?.Invoke(Convert.ToInt64(x.QQ), x.Common) == true)
+                        await x.Agree();
             });
             bot.EventReceived
            .OfType<GroupBan>()
@@ -81,10 +84,11 @@ namespace QQAPI.LLOneBot
           .OfType<GroupMemberDecrease>()
           .Subscribe(x =>
           {
-              if (x.NoticeSubType == UnifyBot.Model.LeaveSubType.Kick && x.QQ == BotQQ)
-              {
-                  BotKick?.Invoke(x.GroupQQ);
-              }
+              if (x.BotQQ == BotQQ)
+                  if (x.NoticeSubType == UnifyBot.Model.LeaveSubType.Kick && x.QQ == BotQQ)
+                  {
+                      BotKick?.Invoke(x.GroupQQ);
+                  }
           });
             Console.WriteLine("Loaded");
         }

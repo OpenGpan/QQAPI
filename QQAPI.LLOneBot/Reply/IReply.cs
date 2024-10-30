@@ -11,13 +11,13 @@ namespace QQAPI.LLOneBot.Reply
     {
         public long ID { get; set; }
         public string Name { get; set; }
-        public enum ReplyType
+        public enum MessagesType
         {
             Temp,
             Friend,
             Group
         }
-        public ReplyType Type { get; }
+        public MessagesType Type { get; }
         public Task MessageSend(Messages messages);
         public Task MessageReplay(Messages messages);
     }

@@ -13,6 +13,7 @@ using UnifyBot.Message;
 using UnifyBot.Message.Chain;
 using UnifyBot.Receiver;
 using UnifyBot.Receiver.MessageReceiver;
+using static QQAPI.LLOneBot.Reply.IReply;
 
 namespace QQAPI.LLOneBot.Message
 {
@@ -24,21 +25,25 @@ namespace QQAPI.LLOneBot.Message
         public Messages(IReply reply)
         {
             Reply = reply;
+            Type = reply.Type;
         }
         public Messages(GroupReceiver r)
         {
             Reply = new Group(r);
             MessageID = r.MessageId;
+            Type = MessagesType.Group;
             LoadMessage(r.Message);
         }
         public Messages(PrivateReceiver r)
         {
             Reply = new Friend(r);
+            Type = MessagesType.Friend;
             LoadMessage(r.Message);
         }
         public Messages(MessageReceiver r, QQBot bot)
         {
             Reply = new Temp(r, bot);
+            Type = MessagesType.Temp;
             LoadMessage(r.Message);
         }
         public void LoadMessage(MessageChain message)
@@ -75,12 +80,6 @@ namespace QQAPI.LLOneBot.Message
             }
         }
         public MessagesType Type;
-        public enum MessagesType
-        {
-            Temp,
-            Friend,
-            Group
-        }
         public string ToPlainString()
         {
             StringBuilder sb = new StringBuilder();

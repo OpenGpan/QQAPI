@@ -18,7 +18,7 @@ namespace QQAPI.LLOneBot.Reply
             this.receiver = receiver;
         }
 
-        public ReplyType Type => ReplyType.Group;
+        public MessagesType Type => MessagesType.Group;
         public async Task MessageSend(Messages messages)
         {
             bot.GetBot().SendPrivateMessage(ID, messages.ToMessageChain());

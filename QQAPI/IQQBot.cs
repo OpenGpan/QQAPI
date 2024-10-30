@@ -4,9 +4,9 @@ using static QQAPI.Handle;
 
 namespace QQAPI
 {
-    public abstract class QQBot
+    public abstract class IQQBot
     {
-        public QQBot(string address, long qq, string key)
+        public IQQBot(string address, long qq, string key)
         {
           
         }
